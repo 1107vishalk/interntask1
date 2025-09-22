@@ -1,0 +1,4 @@
+This repository contains the results and notes from a controlled network discovery performed on the 192.168.168.0/24 subnet. The purpose was to learn how to locate hosts and identify exposed services on a local network. The workflow was:
+Use ip addr show on the scanning machine to find its IPv4 address and subnet mask. From the output 192.168.168.132/24 I confirmed the target network is 192.168.168.0/24.
+Run sudo nmap -sS 192.168.168.0/24 to perform a TCP SYN scan across the entire subnet. sudo allows Nmap to send raw packets; -sS makes the scan faster and less intrusive by not completing full TCP handshakes.
+Inspect Nmap output to list live hosts and open TCP ports (for example, ports like 22/tcp for SSH, 80/tcp for HTTP, 443/tcp for HTTPS).
